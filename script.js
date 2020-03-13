@@ -50,24 +50,49 @@
 
 class Component {
   constructor(selector){
-    this.elems = Array.from(document.querySelectorAll(selector.panel));
-    this.hide_elems = Array.from(document.querySelectorAll(selector.hidePanel));
+    //array of trigger panels
+    this.panels = Array.from(document.querySelectorAll(selector.panels));
+    // array of hidden panels
+    this.hidePanels = Array.from(document.querySelectorAll(selector.hidePanels));
   }
-  hide (){
-    this.elems.forEach((element,index) => {
+
+  hide_show (){
+    this.panels.forEach((element,index) => {
+      // event "when element clicked"
       element.addEventListener('click',()=>{
-        this.hide_elems[index].style.color = 'red';
+        // hidden panel of element[index] = HP
+        let HP = this.hidePanels[index];
+        if (HP.classList.contains('show')) 
+        {
+          HP.style.height = '0';
+          HP.classList.toggle('show');
+        } 
+        else 
+        {
+          HP.style.height = `${ HP.scrollHeight }px`;
+          HP.classList.toggle('show');
+        }
+
+        // automatic hiding of visible panels except the current one
+        for ( let i = 0; i < this.hidePanels.length; i++)
+        {
+          // current hidden panel = thisHP
+          let thisHP = this.hidePanels[i];
+          // КОСТЫЫЫЫЛЬ!!!!!
+          if( thisHP.innerHTML !== element.nextElementSibling.innerHTML)
+          {
+            thisHP.style.height ="0";
+            thisHP.classList.remove('show');
+          }
+        }
       });
-        
     });
   }
 }
 
   const accordion1 = new Component({
-    panel: '.clases',
-    hidePanel: '.clasesHP'
+    panels: '.block_panel',
+    hidePanels: '.hidden_panel'
   });
 
-  console.log(accordion1.elems);
-  console.log(accordion1);
-  console.log(accordion1.hide());
+  accordion1.hide_show();

@@ -8,7 +8,7 @@ class Component {
     this.hidePanels = Array.from(document.querySelectorAll(selector.hidePanels));
   }
 
-  hide_show (){
+  horizontal_auto (){
     this.panels.forEach((element,index) => {
       // event "when element clicked"
       element.addEventListener('click',()=>{
@@ -24,14 +24,12 @@ class Component {
           HP.style.height = `${ HP.scrollHeight }px`;
           HP.classList.toggle('show');
         }
-
         // automatic hiding of visible panels except the current one
         for ( let i = 0; i < this.hidePanels.length; i++)
         {
           // current hidden panel = thisHP
           let thisHP = this.hidePanels[i];
-          // КОСТЫЫЫЫЛЬ!!!!!
-          if( thisHP.innerHTML !== element.nextElementSibling.innerHTML)
+          if( thisHP !== element.nextElementSibling)
           {
             thisHP.style.height ="0";
             thisHP.classList.remove('show');
@@ -40,6 +38,7 @@ class Component {
       });
     });
   }
+
 }
 
   const accordion1 = new Component({
@@ -47,4 +46,4 @@ class Component {
     hidePanels: '.hidden_panel'
   });
 
-  accordion1.hide_show();
+  accordion1.horizontal_auto();

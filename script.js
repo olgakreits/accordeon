@@ -52,12 +52,12 @@ class Component {
         let HP = this.hidePanels[index];
         if (HP.classList.contains('show')) 
         {
-          HP.style.width = '0';
+          HP.style.flexGrow = '0.5';
           HP.classList.toggle('show');
         } 
         else 
         {
-          HP.style.width = `${ HP.scrollHeight }px`;
+          HP.style.flexGrow = '3';
           // this.accordion.style.height = `${ HP.style.height}px` ;
           console.log(this.accordion.style.height);
           HP.classList.toggle('show');
@@ -69,7 +69,7 @@ class Component {
           let thisHP = this.hidePanels[i];
           if( thisHP !== element.nextElementSibling)
           {
-            thisHP.style.width ="0";
+            thisHP.style.flexGrow ='0.5';
             thisHP.classList.remove('show');
           }
         }

@@ -10,6 +10,7 @@
     min-height: 300px;
     max-width: 700px;
     min-width: 300px;
+    overflow: hidden;
 }
 .block_panel2{
     background-color: #212121;
@@ -17,7 +18,7 @@
     
 }
 .hidden_panel2 {
-    flex-grow: 0.5;
+    flex-grow: 0;
     background-color: aqua;
     width: 0px;
     transition: 0.5s;

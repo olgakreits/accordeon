@@ -52,14 +52,12 @@ class Component {
         let HP = this.hidePanels[index];
         if (HP.classList.contains('show')) 
         {
-          HP.style.flexGrow = '0.5';
+          HP.style.flexGrow = '0';
           HP.classList.toggle('show');
         } 
         else 
         {
           HP.style.flexGrow = '3';
-          // this.accordion.style.height = `${ HP.style.height}px` ;
-          console.log(this.accordion.style.height);
           HP.classList.toggle('show');
         }
         // automatic hiding of visible panels except the current one
@@ -69,7 +67,7 @@ class Component {
           let thisHP = this.hidePanels[i];
           if( thisHP !== element.nextElementSibling)
           {
-            thisHP.style.flexGrow ='0.5';
+            thisHP.style.flexGrow ='0';
             thisHP.classList.remove('show');
           }
         }

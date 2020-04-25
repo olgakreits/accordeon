@@ -47,6 +47,10 @@
  .block_panel:hover {
     background-color: rgb(61, 61, 61);
 }
+.block_panel2:hover {
+    background-color: rgb(24, 24, 24);
+    transition: 0.9s;
+}
 
 .hidden_panel {
     padding: 0 ;

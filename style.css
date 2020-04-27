@@ -1,22 +1,24 @@
-
-.accordion{
+.accordion {
     width: 25%;
     display: flex;
     flex-direction: column;
     /* flex-direction: row; */
 }
-.accordion2{
+
+.accordion2 {
     display: flex;
     min-height: 300px;
     max-height: 300px;
     max-width: 800px;
     overflow: hidden;
 }
-.accordion2 img{
+
+.accordion2 img {
     width: 100%;
     height: 100%;
 }
-.block_panel2{
+
+.block_panel2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +26,7 @@
     flex-grow: 0.5;
     color: rgb(114, 114, 114);
 }
+
 .hidden_panel2 {
     flex-grow: 0;
     background-color: aqua;
@@ -32,8 +35,9 @@
     /* display: none; */
 
 }
+
 .block_panel {
-    background-color:rgb(83, 83, 83);
+    background-color: rgb(83, 83, 83);
     color: #fff;
     cursor: pointer;
     padding: 16px;
@@ -44,16 +48,18 @@
     font-size: 18px;
     transition: 0.5s;
 }
- .block_panel:hover {
+
+.block_panel:hover {
     background-color: rgb(61, 61, 61);
 }
+
 .block_panel2:hover {
     background-color: rgb(24, 24, 24);
     transition: 0.9s;
 }
 
 .hidden_panel {
-    padding: 0 ;
+    padding: 0;
     color: #212121;
     background-color: #fff;
     width: 100%;
@@ -62,8 +68,7 @@
     transition: height 0.3s ease-out;
 }
 
-.wrap{ 
+.wrap {
     width: 800px;
     margin-top: 100px;
 }
-

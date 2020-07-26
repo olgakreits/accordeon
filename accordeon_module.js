@@ -8,7 +8,7 @@ class accComponent {
     this.panels = Array.from(document.querySelectorAll(selector.panels));
     // array of hidden panels
     this.hidePanels = Array.from(document.querySelectorAll(selector.hidePanels));
-    this.accordion = document.querySelector(selector.accordion);
+    this.accordeon = document.querySelector(selector.accordeon);
   }
 
   vertical_auto() {
